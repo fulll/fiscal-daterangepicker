@@ -1,0 +1,67 @@
+.App {
+  font-family: sans-serif;
+  margin: 20px auto;
+  width: 80%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.mdc-text-field {
+  background: transparent !important;
+}
+
+p {
+  margin-top: -10px;
+  margin-bottom: 25px;
+}
+
+a[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+:root {
+  --mdc-theme-primary: rgb(0, 163, 225);
+  --mdc-theme-secondary: rgb(0, 105, 146);
+}
+
+.mdc-floating-label {
+  color: grey !important;
+}
+
+.react-resizable-handle {
+  z-index: 4;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.mdc-button--outlined {
+  border-style: solid !important;
+  padding: 0 15px 0 15px !important;
+  border-width: 2px !important;
+  border-radius: 5px !important;
+  display: flex !important;
+}
+
+.mdc-button--outlined .mdc-button__label {
+  font-weight: bold;
+  margin-top: -1px;
+}
+
+.DateInput input.DateInput_input__focused {
+  border-bottom: 2px solid var(--mdc-theme-primary) !important;
+}
+
+.no-user-select {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
