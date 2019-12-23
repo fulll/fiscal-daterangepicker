@@ -4,6 +4,7 @@ import moment from "moment";
 import FiscalYearDateTimePicker from "./Datepicker";
 import DateTimepickerContext from "./Datepicker/DateRangePickerContext";
 import { FISCAL_YEARS, PRESETS } from "./contants";
+import Sample from "./Sample";
 
 import "react-dates/lib/css/_datepicker.css";
 import "@material/react-text-field/dist/text-field.css";
@@ -18,13 +19,13 @@ function App() {
     datetype: "year"
   });
 
+  const updateValues = (start, end, type) => {
+    setContextValue({ start, end, type, updateValues });
+  };
+
   useEffect(() => {
-    setContextValue(oldState => {
-      return {
-        ...oldState,
-        updateValues: setContextValue
-      };
-    });
+    const { start, end, type } = contextValue;
+    setContextValue({ start, end, type, updateValues });
   }, []);
 
   const minDate = moment.utc().subtract(8, "years");
@@ -41,6 +42,7 @@ function App() {
           fiscalYears={FISCAL_YEARS}
           presets={PRESETS}
         />
+        <Sample />
       </DateTimepickerContext.Provider>
     </div>
   );
